@@ -1,0 +1,103 @@
+<!--
+*Author: Ashraf Uzzaman
+*Facebook: https://www.facebook.com/ashraf.uzmahim
+*Website: https://www.ranktrends.com
+*Date: 23-11-2024
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Balance Slide Animation</title>
+        <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5337f;
+    }
+
+    .balance-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      color: #f5337f;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      width: 200px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: width 0.3s ease;
+    }
+
+    .icon {
+      background-color: #f5337f;
+      color: #ffffff;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .text {
+      white-space: nowrap;
+      font-size: 16px;
+      flex-grow: 1;
+      overflow: hidden;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .balance {
+      white-space: nowrap;
+      font-size: 16px;
+      opacity: 0;
+      position: absolute;
+      right: 20px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .active .icon {
+      transform: translateX(140px);
+    }
+
+    .active .text {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+
+    .active .balance {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+    </head>
+    <body>
+
+        <button class="balance-button">
+            <div class="icon">৳</div>
+            <div class="text">ব্যালেন্স দেখুন</div>
+            <div class="balance">৳ 1,250</div>
+        </button>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+  $(document).ready(function() {
+    $('.balance-button').click(function() {
+      $(this).toggleClass('active');
+    });
+  });
+</script>
+
+    </body>
+</html>
